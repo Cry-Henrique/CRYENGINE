@@ -1,4 +1,5 @@
 language: cpp
+compiler: clang
 
 matrix:
   include:
@@ -10,9 +11,9 @@ matrix:
     - os: windows
 
 install:
-  - download_sdks
+  - download_sdks.exe
   - choco install ninja
 
 script:
-  - Tools/CMake/Win32/bin/cmake -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja
-  - Tools/CMake/Win32/bin/cmake --build CMake/win_x64_profile
+  - Tools/CMake/Win32/bin/cmake.exe -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja
+  - Tools/CMake/Win32/bin/cmake.exe --build CMake/win_x64_profile
