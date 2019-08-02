@@ -11,7 +11,8 @@ matrix:
     - os: windows
 
 install:
-  - download_sdks.exe
+  - pwd
+  - ./download_sdks
   - choco install ninja
 
 script:
