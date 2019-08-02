@@ -10,8 +10,7 @@ matrix:
     - os: windows
 
 install:
-  - curl -fSL https://github.com/CRYTEK/CRYENGINE/releases/download/5.5.2/CRYENGINE_v5.5.2_SDKs.zip -o sdks.zip
-  - 7z e sdks.zip
+  - download_sdks
   - choco install ninja
 
 script:
