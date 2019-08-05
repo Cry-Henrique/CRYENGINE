@@ -18,7 +18,7 @@ matrix:
 install:
   - pwd
   - mkdir -p Code/SDKs
-  - if [ ! "$(ls -A budega)" ]; then ./download_sdks; fi
+  - if [ ! "$(ls -A Code/SDKs)" ]; then ./download_sdks; fi
   - choco install ninja
 
 script:
