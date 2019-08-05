@@ -8,7 +8,8 @@ matrix:
     #   sudo: true
     #   compiler: clang
 
-    - os: windows
+    - name: "MSVC on Windows"
+      os: windows
 
 install:
   - pwd
@@ -16,5 +17,5 @@ install:
   - choco install ninja
 
 script:
-  - Tools/CMake/Win32/bin/cmake.exe -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja .
-  - Tools/CMake/Win32/bin/cmake.exe --build CMake/win_x64_profile
+  - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && Tools/CMake/Win32/bin/cmake.exe -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja .'
+  - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && Tools/CMake/Win32/bin/cmake.exe --build CMake/win_x64_profile'
