@@ -20,6 +20,6 @@ install:
 script:
   - mkdir -p CMake/win_x64_profile
   - cd CMake/win_x64_profile
-  - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && ..\..\Tools\CMake\Win32\bin\cmake.exe -DOPTION_SANDBOX=OFF -DOPTION_SUBSTANCE_SUPPORT=OFF -DCMAKE_C_COMPILER=cl.exe -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja ..\..'
+  - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && ..\..\Tools\CMake\Win32\bin\cmake.exe -DOPTION_SANDBOX=OFF -DOPTION_RC=OFF -DCMAKE_C_COMPILER=cl.exe -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_BUILD_TYPE=Profile -BCMake/win_x64_profile -GNinja ..\..'
   - cd ../..
   - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && Tools\CMake\Win32\bin\cmake.exe --build CMake/win_x64_profile'
